@@ -44,3 +44,19 @@ variable "instance_type" {
   description = "Type for EC2 Instnace"
   default     = "t3.micro"
 }
+
+variable "company" {
+  type        = string
+  description = "company name"
+  default     = "Globomatic"
+}
+
+variable "project" {
+  type        = string
+  description = "project name"
+}
+
+variable "billing_code" {
+  type        = string
+  description = "billing code "
+}
