@@ -1,18 +1,14 @@
-variable "aws_access_key" {
-  type        = string
-  description = "aws access key"
-  sensitive   = true
-}
-variable "aws_secret_key" {
-  type        = string
-  description = "aws secret key"
-  sensitive   = true
-}
-
 variable "aws_region" {
   type        = string
   description = "aws region to use for resources"
   default     = "us-east-1"
+}
+
+
+variable "enable_dns_hostnames" {
+  type        = bool
+  description = "Enables dns hostnames in vpc"
+  default     = true
 }
 
 variable "vpc_cidr_block" {
@@ -21,16 +17,11 @@ variable "vpc_cidr_block" {
   default     = "10.0.0.0/16"
 }
 
-variable "enable_dns_hostnames" {
-  type        = bool
-  description = "Enables dns hostnames in vpc"
-  default     = true
-}
 
 variable "vpc_public_subnets_cidr_block" {
   type        = list(string)
   description = "aws public subnets cidr block"
-  default     = ["10.0.0.0/24","10.0.1.0/24"]
+  default     = ["10.0.0.0/24", "10.0.1.0/24"]
 }
 
 variable "map_public_ip_on_launch" {
