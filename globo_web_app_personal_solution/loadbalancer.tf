@@ -14,7 +14,7 @@ resource "aws_lb" "nginx" {
 
   access_logs {
     bucket  = aws_s3_bucket.web_bucket.bucket
-    prefix  = "alb-log"
+    prefix  = "alb-logs"
     enabled = true
   }
 
