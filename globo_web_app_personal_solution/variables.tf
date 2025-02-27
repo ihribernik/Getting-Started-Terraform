@@ -17,11 +17,10 @@ variable "vpc_cidr_block" {
   default     = "10.0.0.0/16"
 }
 
-
-variable "vpc_public_subnets_cidr_block" {
-  type        = list(string)
-  description = "aws public subnets cidr block"
-  default     = ["10.0.0.0/24", "10.0.1.0/24"]
+variable "vpc_public_subnet_count" {
+  type        = number
+  description = "the amount of vpc public subnets to create"
+  default     = 2
 }
 
 variable "map_public_ip_on_launch" {
@@ -34,6 +33,12 @@ variable "instance_type" {
   type        = string
   description = "Type for EC2 Instnace"
   default     = "t3.micro"
+}
+
+variable "instance_count" {
+  type        = number
+  description = "the amount of ec2 instances to create"
+  default     = 2
 }
 
 variable "company" {
@@ -50,4 +55,16 @@ variable "project" {
 variable "billing_code" {
   type        = string
   description = "billing code "
+}
+
+variable "naming_prefix" {
+  type        = string
+  description = "Naming prefix for all resources"
+  default     = "globo-web-app"
+}
+
+variable "environment" {
+  type        = string
+  description = "Environment for the resources"
+  default     = "dev"
 }
